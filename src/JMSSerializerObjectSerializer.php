@@ -37,9 +37,6 @@ class JMSSerializerObjectSerializer implements ObjectSerializer
 
     public function deserialize($serializedObject, $type)
     {
-        $deserializationContext = DeserializationContext::create()
-            ->setSerializeNull(true);
-
-        return $this->serializer->deserialize($serializedObject, $type, $this->format, $deserializationContext);
+        return $this->serializer->deserialize($serializedObject, $type, $this->format);
     }
 }
